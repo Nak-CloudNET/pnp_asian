@@ -9707,4 +9707,52 @@ class Purchases extends MY_Controller
         $this->load->view($this->theme . 'purchases/invoice_add_purchase_order', $this->data);
     }
 
+    function pnp_po_invoice($purchase_id = null)
+    {
+        $this->erp->checkPermissions('index', true);
+
+        if ($this->input->get('id')) {
+            $purchase_id = $this->input->get('id');
+        }
+        $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
+        $inv = $this->purchases_model->getPurchaseOrderByID($purchase_id);
+
+        $this->data['rows'] = $this->purchases_model->getAllPurchaseOrderItems($purchase_id);
+        $this->data['biller'] = $this->purchases_model->getBiller($inv->biller_id);
+        $this->data['supplier'] = $this->site->getCompanyByID($inv->supplier_id);
+        $this->data['warehouse'] = $this->site->getWarehouseByID($inv->warehouse_id);
+        $this->data['invs'] = $inv;
+        $this->data['payments'] = $this->purchases_model->getPaymentsForPurchase($purchase_id);
+        $this->data['created_by'] = $this->site->getUser($inv->created_by);
+        $this->data['updated_by'] = $inv->updated_by ? $this->site->getUser($inv->updated_by) : null;
+
+        //$this->erp->print_arrays($this->purchases_model->getAllPurchaseOrderItems($purchase_id));
+        $this->load->view($this->theme . 'purchases/pnp_po_invoice', $this->data);
+    }
+
+    public function pnp_purchase_invoice($purchase_id = null)
+    {
+        $this->erp->checkPermissions('index');
+
+        if ($this->input->get('id')) {
+            $purchase_id = $this->input->get('id');
+        }
+        $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
+        $inv = $this->purchases_model->getPurchaseByID($purchase_id);
+        if (!$this->session->userdata('view_right')) {
+            $this->erp->view_rights($inv->created_by);
+        }
+        $this->data['p_or'] = $this->purchases_model->getAllPurchasesOrder($purchase_id);
+        $this->data['rows'] = $this->purchases_model->getAllPurchaseItems($purchase_id);
+        $this->data['supplier'] = $this->purchases_model->getCompanyByID($purchase_id);
+        $this->data['warehouse'] = $this->site->getWarehouseByID($inv->warehouse_id);
+        $this->data['biller'] = $this->purchases_model->getAllBillers($purchase_id);
+        $this->data['invs'] = $inv;
+        $this->data['payments'] = $this->purchases_model->getPaymentsForPurchase($purchase_id);
+        $this->data['created_by'] = $this->site->getUser($inv->created_by);
+        $this->data['updated_by'] = $inv->updated_by ? $this->site->getUser($inv->updated_by) : null;
+//        $this->erp->print_arrays($this->data['supplier']);
+        $this->load->view($this->theme . 'purchases/pnp_purchase_invoice', $this->data);
+    }
+
 }

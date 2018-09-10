@@ -218,4 +218,6 @@ $lang['print_purchase_order']				= "Print Purchase Order";
 $lang['purchase_order']				        = "Purchase Order";
 $lang['contact']                            = "Contact";
 $lang['print_purchase']                     = "Print Purchase";
-$lang['supplier_opening_balance'] = "Add Supplier Opening Balance (A/P)";
+$lang['supplier_opening_balance'] 			= "Add Supplier Opening Balance (A/P)";
+$lang['purchase_invoice'] 					= "Purchase Invoice";
+$lang['po_invoice'] 						= "PO Invoice";

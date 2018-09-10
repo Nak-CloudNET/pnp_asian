@@ -447,4 +447,6 @@ $lang['invoice_nano_tech']					= "Invoice nano tech";
 $lang['order_discount_percent']			    = "Order Discount (%)";
 $lang['print_sale_order']			        = "Print Sale Order";
 $lang['contact'] = "Contact";
-$lang['customer_opening_balance'] = "Add Customer Opening Balance (A/R)";
+$lang['customer_opening_balance'] = 		"Add Customer Opening Balance (A/R)";
+$lang['invoice_vat'] = 						"Invoice Vat";
+$lang['delivery_receipt'] = 				"Delivery Receipt";

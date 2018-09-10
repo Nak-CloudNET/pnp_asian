@@ -372,22 +372,17 @@
                         </div>
                     <?php } ?>
                     <div class="btn-group btn-group-justified">
-                        <!--<div class="btn-group">
-                            <a href="<?= site_url('purchases/view/' . $inv->id) ?>" class="tip btn btn-primary" title="<?= lang('view') ?>">
-                                <i class="fa fa-file-text-o"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('view') ?></span>
-                            </a>
-                        </div>-->
                         <div class="btn-group">
-                            <a href="<?= site_url('purchases/received/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('received_form') ?>">
-                                <i class="fa fa-file-text-o"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('print_purchase') ?></span>
+                            <a href="<?= site_url('purchases/pnp_purchase_invoice/' . $inv->id) ?>" target="_blank"
+                               class="tip btn btn-primary" title="<?= lang('purchase_invoice') ?>">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('purchase_invoice') ?></span>
                             </a>
                         </div>
                         <!--<div class="btn-group">
-                            <a href="<?= site_url('purchases/received_kh/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('received_form') ?>">
+                            <a href="<? /*= site_url('purchases/received/' . $inv->id) */ ?>" target="_blank" class="tip btn btn-primary" title="<? /*= lang('received_form') */ ?>">
                                 <i class="fa fa-file-text-o"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('បញ្ជីទទួលទំនិញ') ?></span>
+                                <span class="hidden-sm hidden-xs"><? /*= lang('print_purchase') */ ?></span>
                             </a>
                         </div>-->
 						<?php if($Owner || $Admin || $GP['purchases-email']) { ?>

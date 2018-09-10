@@ -270,86 +270,18 @@
                         </div>
                     <?php } ?>
                     <div class="btn-group btn-group-justified">
-
-                        <!--<?php if ($inv->issue_invoice == 'pending' && ($inv->status != 'rejected' && $inv->status == 'approved')) { ?>
-    						<div class="btn-group">
-                                <a href="<?= site_url('sale_order/add_sale_order/' . $inv->id) ?>" class="tip btn btn-primary" title="<?= lang('create_sale_order') ?>">
-                                    <i class="fa fa-star"></i>
-                                    <span class="hidden-sm hidden-xs"><?= lang('create_sale_order') ?></span>
-                                </a>
-                            </div>
-    						
-                            <div class="btn-group">
-                                <a href="<?= site_url('sales/add/' . $inv->id) ?>" class="tip btn btn-primary" title="<?= lang('create_sale') ?>">
-                                    <i class="fa fa-heart"></i>
-                                    <span class="hidden-sm hidden-xs"><?= lang('create_sale') ?></span>
-                                </a>
-                            </div>
-                        <?php } ?>
-						
-						<div class="btn-group">
-                            <a target='_blank' href="<?= site_url('Quotes/invoice_quotes/'.$inv->id) ?>" class="tip btn btn-primary" title="<?= lang('quotes_invoice') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quotes_invoice') ?></span>
-                            </a>
-                        </div>
-						<!--
                         <div class="btn-group">
-                            <a target='_blank' href="<?= site_url('Quotes/quotes_chea_kheng/'.$inv->id) ?>" class="tip btn btn-primary" title="<?= lang('quotes_chea_kheng') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quotes_chea_kheng') ?></span>
-                            </a>
-                        </div>
-
-                        <div class="btn-group">
-                            <a href="<?= site_url('Quotes/quote_/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('invoice') ?></span>
-                            </a>
-                        </div>-->
-                  <!--       <div class="btn-group">
-                            <a href="<?= site_url('Quotes/quote_invoice_thai_san/' . $inv->id) ?>" target="_blank"
-                               class="tip btn btn-primary" title="<?= lang('print_quote') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('Print_Quote') ?></span>
-                            </a>
-                        </div> -->
-                        <div class="btn-group">
-                            <a href="<?= site_url('Quotes/invoice_standard/' . $inv->id) ?>" target="_blank"
-                               class="tip btn btn-primary" title="<?= lang('print_quote') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('Print_Quote') ?></span>
-                            </a>
-                        </div>
-                        <div class="btn-group">
-                            <a href="<?= site_url('Quotes/invoice_iphoto/' . $inv->id) ?>" target="_blank"
-                               class="tip btn btn-primary" title="<?= lang('print_quote') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('Print_iPhoto_invoice') ?></span>
+                            <a href="<?= site_url('Quotes/pnp_quote_invoice/' . $inv->id) ?>" target="_blank"
+                               class="tip btn btn-primary" title="<?= lang('quote_invoice') ?>">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('quote_invoice') ?></span>
                             </a>
                         </div>
                         <!--<div class="btn-group">
-                            <a href="<?= site_url('Quotes/invoice_quote_chea_kheng/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_quote_chea_kheng') ?>">
+                            <a href="<? /*= site_url('Quotes/quote_invoice_thai_san/' . $inv->id) */ ?>" target="_blank"
+                               class="tip btn btn-primary" title="<? /*= lang('print_quote') */ ?>">
                                 <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('invoice_quote_chea_kheng') ?></span>
-                            </a>
-                        </div>
-						 <div class="btn-group">
-                            <a href="<?= site_url('Quotes/quote_vat/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('quote_vat') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quote_vat') ?></span>
-                            </a>
-                        </div>
-						<div class="btn-group">
-                            <a href="<?= site_url('Quotes/quote_without_vat/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('quote_without_vat') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quote_without_vat') ?></span>
-                            </a>
-                        </div>
-						<div class="btn-group">
-                            <a href="<?= site_url('Quotes/quote_without_vat_logo/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('quote_vat_logo') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quote_vat_logo') ?></span>
+                                <span class="hidden-sm hidden-xs"><? /*= lang('Print_Quote') */ ?></span>
                             </a>
                         </div>-->
                         <?php if ($Owner || $Admin || $GP['quotes-email']) { ?>
@@ -383,28 +315,6 @@
 						} ?>
 						
                     </div>
-
-                    <!--<div class="btn-group btn-group-justified">
-						<div class="btn-group">
-                            <a href="<?= site_url('Quotes/invoice_quote_eang_tay_a5/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_quote_eang_tay_a5') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quote_eang_tay_a5') ?></span>
-                            </a>
-                        </div>
-						<div class="btn-group">
-                            <a href="<?= site_url('Quotes/invoice_quote_eang_tay_a4/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_quote_eang_tay_a4') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('quote_eang_tay_a4') ?></span>
-                            </a>
-                        </div>
-						<div class="btn-group">
-                            <a href="<?= site_url('Quotes/quote_invoice_chim_socheat/'.$inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('Chim_Socheat') ?>">
-                                <i class="fa fa-heart"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('Chim_Socheat') ?></span>
-                            </a>
-                        </div>
-					</div>
-                </div>-->
             <?php } ?>
         </div>
     </div>
